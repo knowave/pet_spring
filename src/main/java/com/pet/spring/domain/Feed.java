@@ -1,4 +1,4 @@
-package com.pet.spring.entity;
+package com.pet.spring.domain;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;
