@@ -3,15 +3,15 @@ package com.pet.spring.service;
 import com.pet.spring.dto.UserDto;
 import com.pet.spring.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @RequiredArgsConstructor
 @Service
 public class UserService {
-    private UserRepository userRepository;
-    private BCryptPasswordEncoder encoder;
+    private final UserRepository userRepository;
+    private final PasswordEncoder encoder;
 
     @Transactional
     public void createUser(UserDto.Request createUserDto) {
