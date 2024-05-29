@@ -1,5 +1,6 @@
 package com.pet.spring.domain;
 
+import com.pet.spring.domain.user.entity.User;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;
 
