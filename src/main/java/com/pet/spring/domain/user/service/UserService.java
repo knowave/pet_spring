@@ -1,7 +1,7 @@
-package com.pet.spring.service;
+package com.pet.spring.domain.user.service;
 
-import com.pet.spring.dto.UserDto;
-import com.pet.spring.repository.UserRepository;
+import com.pet.spring.domain.user.dto.UserDto;
+import com.pet.spring.domain.user.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;

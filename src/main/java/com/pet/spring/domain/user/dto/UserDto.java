@@ -1,6 +1,6 @@
-package com.pet.spring.dto;
+package com.pet.spring.domain.user.dto;
 
-import com.pet.spring.domain.User;
+import com.pet.spring.domain.user.entity.User;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Pattern;

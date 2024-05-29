@@ -18,7 +18,7 @@ import java.util.List;
 
 @Configuration
 public class SecurityConfig {
-    String[] allowUrls = {"/users/login"};
+    String[] allowUrls = {"/users/login", "/users/join"};
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
@@ -37,12 +37,13 @@ public class SecurityConfig {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(List.of("http://localhost:8000")); // 허용할 오리진 지정
-        configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE")); // 허용할 메소드
-        configuration.setAllowedHeaders(List.of("*")); // 허용할 헤더
+        configuration.setAllowedOrigins(List.of("http://localhost:8000"));
+        configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE"));
+        configuration.setAllowedHeaders(List.of("*"));
+        configuration.setAllowCredentials(true);
 
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-        source.registerCorsConfiguration("/**", configuration); // 모든 경로에 적용
+        source.registerCorsConfiguration("/**", configuration);
         return source;
     }
 

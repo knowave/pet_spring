@@ -1,5 +1,7 @@
-package com.pet.spring.domain;
+package com.pet.spring.domain.comment.entity;
 
+import com.pet.spring.domain.BaseEntity;
+import com.pet.spring.domain.feed.enitty.Feed;
 import com.pet.spring.domain.user.entity.User;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;

@@ -1,7 +1,7 @@
-package com.pet.spring.controller;
+package com.pet.spring.domain.user.controller;
 
-import com.pet.spring.dto.UserDto;
-import com.pet.spring.service.UserService;
+import com.pet.spring.domain.user.dto.UserDto;
+import com.pet.spring.domain.user.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;

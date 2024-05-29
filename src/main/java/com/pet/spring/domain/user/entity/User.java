@@ -1,5 +1,8 @@
-package com.pet.spring.domain;
+package com.pet.spring.domain.user.entity;
 
+import com.pet.spring.domain.BaseEntity;
+import com.pet.spring.domain.comment.entity.Comment;
+import com.pet.spring.domain.feed.enitty.Feed;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
