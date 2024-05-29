@@ -1,6 +1,7 @@
 package com.pet.spring.domain.user.dto;
 
 import com.pet.spring.domain.user.entity.User;
+import com.pet.spring.global.constant.Role;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Pattern;
@@ -38,7 +39,9 @@ public class UserDto {
 
         private String profileImage;
 
+        @NotEmpty(message = "소개글을 입력해주세요.")
         private String introduction;
+        private Role role;
 
         public User toEntity() {
             User user = User.builder()
@@ -49,6 +52,7 @@ public class UserDto {
                     .phoneNumber(phoneNumber)
                     .profileImage(profileImage)
                     .introduction(introduction)
+                    .role(role)
                     .build();
             return user;
         }

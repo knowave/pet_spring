@@ -2,6 +2,7 @@ package com.pet.spring.domain.user.service;
 
 import com.pet.spring.domain.user.dto.UserDto;
 import com.pet.spring.domain.user.repository.UserRepository;
+import com.pet.spring.global.constant.Role;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -19,6 +20,7 @@ public class UserService {
             throw new IllegalArgumentException("이미 존재하는 이메일입니다.");
         }
         createUserDto.setPassword(encoder.encode(createUserDto.getPassword()));
+        createUserDto.setRole(Role.CLIENT);
         userRepository.save(createUserDto.toEntity());
     }
 

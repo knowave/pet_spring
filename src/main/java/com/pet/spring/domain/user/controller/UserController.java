@@ -4,10 +4,7 @@ import com.pet.spring.domain.user.dto.UserDto;
 import com.pet.spring.domain.user.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RequiredArgsConstructor
 @RestController
@@ -15,7 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserController {
     private final UserService userService;
 
-    @PostMapping("join")
+    @CrossOrigin(origins = "http://localhost:8000")
+    @PostMapping("/join")
     public ResponseEntity<String> join(@RequestBody UserDto.Request createUserDto) {
         userService.createUser(createUserDto);
         return ResponseEntity.ok().body("SUCCESS!");
