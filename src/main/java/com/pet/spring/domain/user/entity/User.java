@@ -3,10 +3,8 @@ package com.pet.spring.domain.user.entity;
 import com.pet.spring.domain.BaseEntity;
 import com.pet.spring.domain.comment.entity.Comment;
 import com.pet.spring.domain.feed.enitty.Feed;
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.OneToMany;
+import com.pet.spring.global.constant.Role;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -43,6 +41,10 @@ public class User extends BaseEntity {
 
     @Column(length = 100)
     private String introduction;
+
+    @Column(nullable = false)
+    @Enumerated(EnumType.STRING)
+    private Role role;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<Feed> feeds;
