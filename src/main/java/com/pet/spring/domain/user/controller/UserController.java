@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.*;
 public class UserController {
     private final UserService userService;
 
-    @CrossOrigin(origins = "http://localhost:8000")
     @PostMapping("/join")
     public ResponseEntity<String> join(@RequestBody UserDto.Request createUserDto) {
         userService.createUser(createUserDto);
