@@ -1,6 +1,7 @@
 package com.pet.spring.domain.user.service;
 
 import com.pet.spring.domain.user.dto.UserDto;
+import com.pet.spring.domain.user.entity.User;
 import com.pet.spring.domain.user.repository.UserRepository;
 import com.pet.spring.global.constant.Role;
 import com.pet.spring.global.exception.CustomException;
@@ -26,4 +27,9 @@ public class UserService {
         userRepository.save(createUserDto.toEntity());
     }
 
+    public User getUserById(Long id) {
+        User user = userRepository.findById(id).orElseThrow(() -> new CustomException("존재하는 회원이 없습니다.", HttpStatus.NOT_FOUND));
+
+        return user;
+    }
 }
